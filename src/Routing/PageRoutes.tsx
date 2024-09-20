@@ -18,7 +18,11 @@ const PageRoutes = () => {
         {
             path:"login",
             element:<div>Login</div>
-        }
+        },
+        {
+          path:"cakes",
+          element:<div>Cakes</div>
+      }
       ],
     },
   ]);

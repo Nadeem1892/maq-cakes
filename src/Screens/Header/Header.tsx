@@ -4,6 +4,7 @@ import { LuShoppingCart } from "react-icons/lu";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { IoMdSearch, IoMdClose } from "react-icons/io";
 import NavBar from "../NavBar";
+// import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
