@@ -3,7 +3,7 @@ import React from 'react'
 const NavBar = () => {
 
   return (
-    <div className='bg-gray-100 shadow-lg mt-[60px] flex p-2 items-center justify-center'>
+    <div className='bg-pink-100 shadow-lg mt-[60px] flex p-2 items-center justify-center'>
     <nav className="flex w-full justify-around">
      <a href="#flavours" className="hover:text-gray-400 text-gray-800">Cakes</a>
      <a href="#flavours" className="hover:text-gray-400 text-gray-800">By Flavours</a>

@@ -6,15 +6,15 @@ import BestSellersSection from '../Components/BestSellersSection'
 
 const Landing = () => {
   return (
-    <div className='flex flex-col gap-10 mt-16 overflow-hidden lg:mt-5'>
+    <div className='flex flex-col gap-10  mt-16 overflow-hidden lg:mt-5'>
     <MyCarousel/>
 
-    <div className='flex flex-col gap-5 py-5'>
+    <div className='flex flex-col p-4 gap-5 py-5'>
     <Heading heading={"Surprise Your Loved One"}/>
     <SurpriseSection/>
     </div>
     
-    <div className='flex flex-col gap-5 py-5 bg-pink-50'>
+    <div className="flex flex-col gap-5 p-4   bg-[url('https://media.bakingo.com/bakingo-ssr/static/media/bestSellerDesk.ce04c4ff.svg')]">
     <Heading heading={"Our Best Sellers"}/> 
     <BestSellersSection/>  
     </div>
