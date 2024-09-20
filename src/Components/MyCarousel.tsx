@@ -1,4 +1,3 @@
-import React from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,7 +15,7 @@ const MyCarousel = () => {
 
   return (
     <Slider {...settings}>
-    <div className="flex items-center justify-center px-1">
+    <div className="px-1 ">
       <div className='lg:rounded-lg rounded-2xl'>
         <img
           className="mx-auto lg:rounded-lg rounded-2xl"
@@ -25,7 +24,8 @@ const MyCarousel = () => {
         />
       </div>
     </div>
-    <div className="flex items-center justify-center px-1 ">
+
+    <div className="px-1 ">
       <div className='lg:rounded-lg rounded-2xl'>
         <img
           className="mx-auto lg:rounded-lg rounded-2xl"
@@ -34,7 +34,8 @@ const MyCarousel = () => {
         />
       </div>
     </div>
-    <div className="flex items-center justify-center px-1 ">
+
+    <div className="px-1 ">
       <div className='lg:rounded-lg rounded-2xl'>
         <img
           className="mx-auto lg:rounded-lg rounded-2xl"
@@ -44,7 +45,7 @@ const MyCarousel = () => {
       </div>
     </div>
 
-    <div className="flex items-center justify-center px-1 ">
+    <div className="px-1 ">
       <div className='lg:rounded-lg rounded-2xl'>
         <img
           className="mx-auto lg:rounded-lg rounded-2xl"
