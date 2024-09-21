@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <div className="flex flex-col">
       {/* Fixed Header */}
-      <header className="bg-pink-200 shadow-lg text-gray-700 h-[60px] lg:px-6 px-3 fixed top-0 left-0 w-full z-20 flex justify-between items-center">
+      <header className="bg-red-500 shadow-lg text-white h-[60px] lg:px-6 px-3 fixed top-0 left-0 w-full z-20 flex justify-between items-center">
         {/* Logo and Menu Button */}
         <div className="flex items-center gap-2">
           <HiMenuAlt1
@@ -31,18 +31,18 @@ const Header = () => {
           {/* Search Bar */}
           <div className="flex items-center">
             {/* Search input for large screens */}
-            <div className="hidden lg:flex px-4 py-2 rounded-md border-2 border-gray-500 overflow-hidden max-w-md mx-auto font-[sans-serif]">
+            <div className="hidden lg:flex px-4 py-2 rounded-md border-2 border-white overflow-hidden max-w-md mx-auto font-[sans-serif]">
               <input
                 type="text"
                 placeholder="Search Something..."
-                className="text-sm text-gray-800 bg-transparent outline-none w-96"
+                className="text-sm text-white placeholder-white bg-transparent outline-none w-96"
               />
-              <IoMdSearch className="text-[20px] text-gray-800 cursor-pointer" />
+              <IoMdSearch className="text-[20px] text-white cursor-pointer" />
             </div>
           </div>
 
           {/* Cart and User Icons */}
-          <IoMdSearch className="lg:hidden text-[25px] text-gray-700 cursor-pointer md:block" />
+          <IoMdSearch className="lg:hidden text-[25px] text-white cursor-pointer md:block" />
           <LuShoppingCart className="text-xl" />
           <FaRegCircleUser className="text-xl" />
         </div>
@@ -57,13 +57,13 @@ const Header = () => {
       {isNavOpen && (
         <nav className="fixed top-0 left-0 z-50 w-64 h-full overflow-y-auto text-gray-800 bg-gray-100 shadow-lg md:hidden">
           <div className="flex flex-col h-full">
-            <div className="flex items-center justify-between px-2 py-8 bg-pink-100">
-              <h2 className="text-xl font-semibold text-gray-700">
+            <div className="flex items-center justify-between px-2 py-8 bg-red-400">
+              <h2 className="text-xl font-semibold text-white">
                 All Categories
               </h2>
               <IoMdClose
                 onClick={toggleNav}
-                className="text-[28px] text-gray-700"
+                className="text-[28px] text-white"
               />
             </div>
             <ul className="px-3 mt-5 space-y-3">
@@ -93,52 +93,52 @@ const Header = () => {
                 )}
               </li> */}
 
-              <li className="p-2 bg-pink-100">
-                <a href="#flavours" className="text-xl text-gray-600 ">
+              <li className="p-2 bg-red-400">
+                <a href="#flavours" className="text-xl text-white ">
                   Cakes
                 </a>
               </li>
-              <li className="p-2 bg-pink-100">
-                <a href="#flavours" className="text-xl text-gray-600 ">
+              <li className="p-2 bg-red-400">
+                <a href="#flavours" className="text-xl text-white ">
                   By Flavours
                 </a>
               </li>
-              <li className="p-2 bg-pink-100">
-                <a href="#theme-cakes" className="text-xl text-gray-600 ">
+              <li className="p-2 bg-red-400">
+                <a href="#theme-cakes" className="text-xl text-white ">
                   Theme Cakes
                 </a>
               </li>
-              <li className="p-2 bg-pink-100">
-                <a href="#relationship" className="text-xl text-gray-600 ">
+              <li className="p-2 bg-red-400">
+                <a href="#relationship" className="text-xl text-white ">
                   By Relationship
                 </a>
               </li>
-              <li className="p-2 bg-pink-100">
-                <a href="#desserts" className="text-xl text-gray-600 ">
+              <li className="p-2 bg-red-400">
+                <a href="#desserts" className="text-xl text-white ">
                   Desserts
                 </a>
               </li>
 
-              <li className="p-2 bg-pink-100">
-                <a href="#birthday" className="text-xl text-gray-600 ">
+              <li className="p-2 bg-red-400">
+                <a href="#birthday" className="text-xl text-white ">
                   Birthday
                 </a>
               </li>
 
-              <li className="p-2 bg-pink-100">
-                <a href="#anniversary" className="text-xl text-gray-600 ">
+              <li className="p-2 bg-red-400">
+                <a href="#anniversary" className="text-xl text-white ">
                   Anniversary
                 </a>
               </li>
 
-              <li className="p-2 bg-pink-100">
-                <a href="#anniversary" className="text-xl text-gray-600 ">
+              <li className="p-2 bg-red-400">
+                <a href="#anniversary" className="text-xl text-white ">
                   Occasion
                 </a>
               </li>
 
-              <li className="p-2 bg-pink-100">
-                <a href="#anniversary" className="text-xl text-gray-600 ">
+              <li className="p-2 bg-red-400">
+                <a href="#anniversary" className="text-xl text-white ">
                   Customized Cakes
                 </a>
               </li>
