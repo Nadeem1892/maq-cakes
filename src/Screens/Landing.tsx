@@ -8,6 +8,7 @@ import Flavours from "../Components/Flavours";
 import TrendingCakes from "../Components/TrendingCakes";
 import DesignerCakes from "../Components/DesignerCakes";
 import LookingforSomething from "../Components/LookingforSomething";
+import Footer from "./Footer/Footer";
 
 const Landing = () => {
   return (
@@ -90,6 +91,12 @@ const Landing = () => {
       <div className="flex flex-col p-4 lg:p-8 gap-32">
         <Heading heading={"Looking for Something Else"} />
         <LookingforSomething/>
+      </div>
+
+
+      {/* Section 8 Footer */}
+      <div className="">
+      <Footer/>
       </div>
     </div>
   );

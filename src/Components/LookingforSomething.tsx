@@ -10,7 +10,7 @@ import cookies from '../Assets/cookies.png'
 
  const LookingforSomething = () => {
   return (
-    <div className='grid grid-cols-1 gap-40 lg:gap-24 lg:grid-cols-3'>
+    <div className='grid grid-cols-1 gap-[115px] lg:gap-24 lg:grid-cols-3'>
     <AtmCard cakeImg={pastries} heading={'Pastries'}/>
     <AtmCard cakeImg={brownies} heading={'Brownies'}/>
     <AtmCard cakeImg={cupCakes} heading={'Cup Cakes'}/>
