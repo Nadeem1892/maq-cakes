@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "../Screens/Layout";
 import Landing from "../Screens/Landing";
 
+
 // type Props = {}
 
 const PageRoutes = () => {
@@ -13,12 +14,9 @@ const PageRoutes = () => {
       children: [
         {
             path:"",
-            element:<Landing/>
+            element:<Landing/>,
         },
-        {
-            path:"login",
-            element:<div>Login</div>
-        },
+        
         {
           path:"cakes",
           element:<div>Cakes</div>

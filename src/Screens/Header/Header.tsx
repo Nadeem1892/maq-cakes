@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { LuShoppingCart } from "react-icons/lu";
-import { FaRegCircleUser } from "react-icons/fa6";
 import { IoMdSearch, IoMdClose } from "react-icons/io";
 import NavBar from "../NavBar";
-// import { Link } from "react-router-dom";
+import Modal from "../../Components/Modals/Modal";
+
+
+
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -44,7 +46,8 @@ const Header = () => {
           {/* Cart and User Icons */}
           <IoMdSearch className="lg:hidden text-[25px] text-white cursor-pointer md:block" />
           <LuShoppingCart className="text-xl" />
-          <FaRegCircleUser className="text-xl" />
+          {/* User Model */}
+          <Modal/>
         </div>
       </header>
 

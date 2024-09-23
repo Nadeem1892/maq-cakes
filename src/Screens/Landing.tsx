@@ -1,4 +1,3 @@
-import React from "react";
 import MyCarousel from "../Components/MyCarousel";
 import Heading from "../Atoms/Heading";
 import SurpriseSection from "../Components/SurpriseSection";
@@ -8,11 +7,18 @@ import Flavours from "../Components/Flavours";
 import TrendingCakes from "../Components/TrendingCakes";
 import DesignerCakes from "../Components/DesignerCakes";
 import LookingforSomething from "../Components/LookingforSomething";
-import Footer from "./Footer/Footer";
+import { Outlet } from "react-router-dom";
+
 
 const Landing = () => {
+ 
+
+
   return (
-    <div className="flex flex-col gap-5 mt-20 overflow-hidden lg:mt-5">
+    <div className={` relative flex flex-col gap-5 mt-20 overflow-hidden lg:mt-5`}>
+      <div>
+        <Outlet/>
+      </div>
       {/* Section 1 */}
       <div className="px-4">
         <MyCarousel />
@@ -94,10 +100,7 @@ const Landing = () => {
       </div>
 
 
-      {/* Section 8 Footer */}
-      <div className="">
-      <Footer/>
-      </div>
+      
     </div>
   );
 };
