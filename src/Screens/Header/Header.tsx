@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <div className="flex flex-col">
       {/* Fixed Header */}
-      <header className="bg-red-400 shadow-lg text-white h-[60px] lg:px-6 px-3 fixed top-0 left-0 w-full z-20 flex justify-between items-center">
+      <header className="bg-red-300 shadow-lg text-white h-[60px] lg:px-6 px-3 fixed top-0 left-0 w-full z-20 flex justify-between items-center">
         {/* Logo and Menu Button */}
         <div className="flex items-center gap-2">
           <HiMenuAlt1
