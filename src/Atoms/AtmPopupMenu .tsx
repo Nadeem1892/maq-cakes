@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { FaRegCircleUser } from "react-icons/fa6";
 
 
-type Props = {}
+// type Props = {}
 
-function AtmPopupMenu ({}: Props) {
+const AtmPopupMenu = () => {
 
   const [isChecked, setIsChecked] = useState(false);
 

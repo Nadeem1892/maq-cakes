@@ -1,10 +1,11 @@
+
 import React, { useState } from "react";
 import { FaRegCircleUser } from "react-icons/fa6";
 import AtmInputField from "../../Atoms/AtmInputField";
 import { MdClose } from "react-icons/md";
-import AtmPopupMenu from "../../Atoms/AtmPopupMenu ";
+import maqLogo from "../../Assets/logo/MAQ_logo.png"
 
-const Modal = () => {
+const LoginModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -35,8 +36,8 @@ const Modal = () => {
             <div className="relative bg-white rounded-lg shadow-lg">
               {/* Modal Header */}
               <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
-                <h3 className="text-xl font-semibold text-red-400 ">MAQ Cakes</h3>
-                <h3 className="text-xl font-semibold text-red-400 ">Login</h3>
+                <img src={maqLogo} alt="" className="w-20 h-20"/>
+                <h3 className="text-xl font-semibold text-gray-500 ">Login</h3>
                 <MdClose onClick={toggleModal} className="text-gray-600 bg-transparent hover:text-red-500  rounded-lg text-sm w-6 h-6 inline-flex justify-center items-center  "/>
               </div>
 
@@ -81,4 +82,4 @@ const Modal = () => {
   );
 };
 
-export default Modal;
+export default LoginModal;

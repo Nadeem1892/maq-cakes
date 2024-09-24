@@ -98,9 +98,6 @@ const Landing = () => {
         <Heading heading={"Looking for Something Else"} />
         <LookingforSomething/>
       </div>
-
-
-      
     </div>
   );
 };

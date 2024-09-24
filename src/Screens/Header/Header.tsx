@@ -3,7 +3,8 @@ import { HiMenuAlt1 } from "react-icons/hi";
 import { LuShoppingCart } from "react-icons/lu";
 import { IoMdSearch, IoMdClose } from "react-icons/io";
 import NavBar from "../NavBar";
-import Modal from "../../Components/Modals/Modal";
+import maqLogo from "../../Assets/logo/MAQ_logo.png"
+import LoginModalwrapper from "../Auth/LoginModalwrapper";
 
 
 
@@ -15,6 +16,7 @@ const Header = () => {
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
+
   return (
     <div className="flex flex-col">
       {/* Fixed Header */}
@@ -25,7 +27,8 @@ const Header = () => {
             className="text-3xl  md:hidden focus:outline-none"
             onClick={toggleNav}
           />
-          <h1 className="text-xl uppercase  lg:text-2xl">MAQ Cakes</h1>
+          <img className="w-20 h-20" src={maqLogo} alt="" />
+          <h1 className="text-xl uppercase lg:block hidden  lg:text-2xl">MAQ Cakes</h1>
         </div>
 
         {/* Search Bar, Cart, and User Icons */}
@@ -47,7 +50,7 @@ const Header = () => {
           <IoMdSearch className="lg:hidden text-[25px] text-white cursor-pointer md:block" />
           <LuShoppingCart className="text-xl" />
           {/* User Model */}
-          <Modal/>
+         <LoginModalwrapper/>
         </div>
       </header>
 

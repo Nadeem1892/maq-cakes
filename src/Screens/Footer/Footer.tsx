@@ -11,7 +11,7 @@ import { SiVisa } from "react-icons/si";
 import { LiaCcAmex } from "react-icons/lia";
 import { FaCcPaypal } from "react-icons/fa6";
 import { SiPaytm } from "react-icons/si";
-
+import maqLogo from "../../Assets/logo/MAQ_logo.png"
 
 const Footer = () => {
   return (
@@ -70,9 +70,9 @@ const Footer = () => {
 
       {/* Section 2 */}
       <div className="p-4 lg:p-8">
-        <div className="grid lg:grid-cols-4 grid-cols-1 gap-5 lg:place-items-center">
-          <div className="flex flex-col items-center gap-5">
-            <h1 className="text-red-400 text-3xl font-semibold">MAQ CAKES</h1>
+        <div className="grid lg:grid-cols-4 grid-cols-1 gap-4 lg:place-items-center">
+          <div className="flex flex-col items-center gap-1">
+            <img className="w-40 h-40" src={maqLogo} alt="" />
             <ul className="flex gap-5 text-[25px] text-gray-600">
               <li className="hover:text-red-400">
                 <Link to={"/"}>
