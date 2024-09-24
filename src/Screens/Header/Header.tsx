@@ -4,7 +4,8 @@ import { LuShoppingCart } from "react-icons/lu";
 import { IoMdSearch, IoMdClose } from "react-icons/io";
 import NavBar from "../NavBar";
 import maqLogo from "../../Assets/logo/MAQ_logo.png"
-import LoginModalwrapper from "../Auth/LoginModalwrapper";
+
+
 
 
 
@@ -20,15 +21,15 @@ const Header = () => {
   return (
     <div className="flex flex-col">
       {/* Fixed Header */}
-      <header className="bg-red-300 shadow-lg text-white h-[60px] lg:px-6 px-3 fixed top-0 left-0 w-full z-20 flex justify-between items-center">
+      <header className="bg-red-100 shadow-lg text-gray-600 h-[60px] lg:px-6 px-3 fixed top-0 left-0 w-full z-20 flex justify-between items-center">
         {/* Logo and Menu Button */}
         <div className="flex items-center gap-2">
           <HiMenuAlt1
-            className="text-3xl  md:hidden focus:outline-none"
+            className="text-3xl md:hidden focus:outline-none"
             onClick={toggleNav}
           />
           <img className="w-20 h-20" src={maqLogo} alt="" />
-          <h1 className="text-xl uppercase lg:block hidden  lg:text-2xl">MAQ Cakes</h1>
+          <h1 className="hidden text-xl uppercase lg:block lg:text-2xl">MAQ Cakes</h1>
         </div>
 
         {/* Search Bar, Cart, and User Icons */}
@@ -36,21 +37,23 @@ const Header = () => {
           {/* Search Bar */}
           <div className="flex items-center">
             {/* Search input for large screens */}
-            <div className="hidden lg:flex px-4 py-2 rounded-md border-2 border-white overflow-hidden max-w-md mx-auto font-[sans-serif]">
+            <div className="hidden lg:flex px-4 py-2 rounded-md border-2 border-gray-600 overflow-hidden max-w-md mx-auto font-[sans-serif]">
               <input
                 type="text"
                 placeholder="Search Something..."
-                className="text-sm text-white placeholder-white bg-transparent outline-none w-96"
+                className="text-sm text-white placeholder-gray-600 bg-transparent outline-none w-96"
               />
-              <IoMdSearch className="text-[20px] text-white cursor-pointer" />
+              <IoMdSearch className="text-[20px] text-gray-600 cursor-pointer" />
             </div>
           </div>
 
           {/* Cart and User Icons */}
-          <IoMdSearch className="lg:hidden text-[25px] text-white cursor-pointer md:block" />
+          <IoMdSearch className="lg:hidden text-[25px] text-gray-600 cursor-pointer md:block" />
           <LuShoppingCart className="text-xl" />
           {/* User Model */}
-         <LoginModalwrapper/>
+         
+         <h1>Login</h1>
+        
         </div>
       </header>
 

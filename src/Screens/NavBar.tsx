@@ -1,20 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import AtmDropdown from '../Atoms/AtmDropdown'
 
 const NavBar = () => {
 
   return (
     <div className='bg-pink-50 shadow-lg mt-[60px] flex p-2 items-center justify-center'>
-    <nav className="flex w-full justify-around">
-     <Link to="cakes" className="hover:text-pink-400 text-gray-800">Cakes</Link>
-     <a href="#flavours" className="hover:text-pink-400 text-gray-800">By Flavours</a>
-     <a href="#theme-cakes" className="hover:text-pink-400 text-gray-800">Theme Cakes</a>
-     <a href="#relationship" className="hover:text-pink-400 text-gray-800">By Relationship</a>
-     <a href="#desserts" className="hover:text-pink-400 text-gray-800">Desserts</a>
-     <a href="#birthday" className="hover:text-pink-400 text-gray-800">Birthday</a>
-     <a href="#anniversary" className="hover:text-pink-400 text-gray-800">Anniversary</a>
-     <a href="#anniversary" className="hover:text-pink-400 text-gray-800">Occasion</a>
-     <a href="#anniversary" className="hover:text-pink-400 text-gray-800">Customized Cakes</a>
+    <nav className="flex justify-around w-full">
+     <Link to="cakes" className="text-gray-800 hover:text-pink-400">Cakes</Link>
+     <a href="#flavours" className="text-gray-800 hover:text-pink-400">Snacks</a>
+     <a href="#theme-cakes" className="text-gray-800 hover:text-pink-400">Breads</a>
+     <a href="#relationship" className="text-gray-800 hover:text-pink-400">Cookies</a>
+     <a href="#desserts" className="text-gray-800 hover:text-pink-400">Desserts</a>
+     <a href="#birthday" className="text-gray-800 hover:text-pink-400">Pastries</a>
+     <a href="#anniversary" className="text-gray-800 hover:text-pink-400">Muffins</a>
+     <a href="#anniversary" className="text-gray-800 hover:text-pink-400">Pies</a>
+     <a href="#anniversary" className="text-gray-800 hover:text-pink-400">Rolls</a>
+     <AtmDropdown/>
    </nav>
 </div>
   )

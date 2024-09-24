@@ -1,13 +1,11 @@
-import React from 'react'
-import LoginModal from './LoginModal'
+import Login from "./Login"
 
 
-
-function LoginModalwrapper() {
+const LoginModalwrapper=()=> {
     
   return (
     <>
-    <LoginModal/>
+    <Login/>
     </>
   )
 }

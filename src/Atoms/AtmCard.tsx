@@ -5,13 +5,13 @@ type Props = {
 }
 
 function AtmCard({cakeImg,heading}: Props) {
-    console.log(cakeImg)
+   
   return (
     <div className='bg-pink-100 relative rounded-lg h-[180px] shadow-xl cursor-pointer flex flex-col justify-around  w-full'>
-        <div className=' bg-indigo-900 flex justify-center w-full '>
-        <img className=' h-72 absolute bottom-1' src={cakeImg} alt="" />
+        <div className='flex justify-center w-full bg-indigo-900 '>
+        <img className='absolute h-72 bottom-1' src={cakeImg} alt="" />
         </div>
-        <div className=' w-full  flex justify-center items-center t'>
+        <div className='flex items-center justify-center w-full t'>
         <h1 className='text-[25px] text-gray-800 font-semibold'>{heading}</h1>
         </div>
     </div>
