@@ -1,83 +1,57 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-type Props = {};
+type Props = {
+  title: string;
+  isDropdownVisible: boolean;
+  subcategories: string[];
+  handleMouseEnter: () => void;
+  handleMouseLeave: () => void;
+};
 
-function AtmDropdown({}: Props) {
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsDropdownVisible(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsDropdownVisible(false);
-  };
-
-  // const toggleNav = () => {
-  //     setIsDropdownVisible(!isDropdownVisible);
-  //   };
-
+function AtmDropdown({
+  title,
+  isDropdownVisible,
+  subcategories,
+  handleMouseEnter,
+  handleMouseLeave,
+}: Props) {
   return (
+    <li
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="relative"
+    >
+      <Link
+        to={`/${title.toLowerCase()}`}
+        className={`text-gray-800 hover:text-pink-300 ${
+          isDropdownVisible ? "text-pink-400" : ""
+        }`}
+      >
+        {title}
+      </Link>
 
-    
-    <ul className="space-y-3">
-      {/* Cakes Dropdown for Mobile */}
-      <li>
-        <Link
-          to="cakes"
-          className="text-gray-800 hover:text-pink-400"
+      {/* Show dropdown only if isDropdownVisible is true */}
+      {isDropdownVisible && (
+        <div
           onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="absolute z-50 w-[135px] mt-2 transform -translate-x-1/2 bg-white divide-y divide-gray-100 rounded-lg shadow-lg left-1/2"
         >
-          Cakes
-        </Link>
-
-        {isDropdownVisible && (
-          <div
-            className="absolute z-30 mt-3 bg-white divide-y divide-gray-100 rounded-lg shadow right-2 w-44 dark:bg-gray-700"
-            onMouseLeave={handleMouseLeave}
-          >
-            <ul
-              className="py-2 text-sm text-gray-700 dark:text-gray-200"
-              aria-labelledby="dropdownDelayButton"
-            >
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          <ul className="py-2 text-sm text-gray-700">
+            {subcategories.map((subcategory, index) => (
+              <li key={index}>
+                <Link
+                  to={`/${title.toLowerCase()}/${subcategory.toLowerCase()}`}
+                  className="block px-4 py-2 hover:bg-gray-100"
                 >
-                  Dashboard
-                </a>
+                  {subcategory}
+                </Link>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  Settings
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  Earnings
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  Sign out
-                </a>
-              </li>
-            </ul>
-          </div>
-        )}
-      </li>
-    </ul>
+            ))}
+          </ul>
+        </div>
+      )}
+    </li>
   );
 }
 

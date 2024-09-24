@@ -14,7 +14,7 @@ const Landing = () => {
  
 
   return (
-    <div className={` relative flex flex-col gap-5  mt-20 overflow-hidden lg:mt-5`}>
+    <div className={` relative flex flex-col gap-5 mt-20 overflow-hidden lg:mt-32`}>
       
       {/* Section 1 */}
       <div className="px-4 ">

@@ -15,7 +15,7 @@ const MyCarousel = () => {
 
   return (
     <Slider {...settings}>
-    <div className="px-1 ">
+    <div className="px-1">
       <div className='lg:rounded-lg rounded-2xl'>
         <img
           className="mx-auto lg:rounded-lg rounded-2xl"
