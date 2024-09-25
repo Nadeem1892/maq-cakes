@@ -1,5 +1,7 @@
 import AtmInputField from "../../Atoms/AtmInputField";
 import maqLogo from "../../Assets/logo/MAQ_logo.png"
+import { IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Login = () => {
 
@@ -14,11 +16,13 @@ const Login = () => {
           <div className="relative p-4 w-[500px] max-w-lg max-h-full">
             {/* Modal Content */}
             <div className="relative bg-white rounded-lg shadow-lg">
+              
               {/* Modal Header */}
               <div className="flex items-center justify-between p-4 border-b rounded-t md:p-5 ">
+
                 <img src={maqLogo} alt="" className="w-20 h-20"/>
                 <h3 className="text-xl font-semibold text-gray-500 ">Login</h3>
-                
+                <Link to={"/"}><IoClose className="text-2xl"/></Link>
               </div>
 
               {/* Modal Body */}

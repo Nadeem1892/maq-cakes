@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { LuShoppingCart } from "react-icons/lu";
 import { IoMdSearch, IoMdClose } from "react-icons/io";
+import { FaUser } from "react-icons/fa";
 import NavBar from "../NavBar";
 import maqLogo from "../../Assets/logo/MAQ_logo.png"
+import ProfileDropdown from "../../Components/Dropdowns/ProfileDropdown";
+import { Link } from "react-router-dom";
 
 
 
@@ -12,7 +15,9 @@ import maqLogo from "../../Assets/logo/MAQ_logo.png"
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  // const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
+  
   // Toggle side navigation
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
@@ -48,11 +53,22 @@ const Header = () => {
           </div>
 
           {/* Cart and User Icons */}
-          <IoMdSearch className="lg:hidden text-[25px] text-gray-600 cursor-pointer md:block" />
-          <LuShoppingCart className="text-xl" />
-          {/* User Model */}
+          <IoMdSearch className="text-2xl text-gray-600 cursor-pointer lg:hidden md:block" />
+          <LuShoppingCart className="text-2xl" />
+
+
+          {/* User Model  */}
+          <div className="hidden lg:block">
+          <ProfileDropdown/>
+          </div>
+
+          {/* User icon mobile */}
+          <div className="block lg:hidden">
+          <Link to={"login"} className="text-xl">
+            <FaUser/>
+          </Link>
+          </div>
          
-         <h1>Login</h1>
         
         </div>
       </header>

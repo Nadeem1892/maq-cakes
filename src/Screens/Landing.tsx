@@ -7,6 +7,7 @@ import Flavours from "../Components/Flavours";
 import TrendingCakes from "../Components/TrendingCakes";
 import DesignerCakes from "../Components/DesignerCakes";
 import LookingforSomething from "../Components/LookingforSomething";
+import { Outlet } from "react-router-dom";
 
 
 
@@ -15,7 +16,10 @@ const Landing = () => {
 
   return (
     <div className={` relative flex flex-col gap-5 mt-20 overflow-hidden lg:mt-32`}>
-      
+      {/* this Outlate Landing Chiled */}
+      <div>
+        <Outlet/>
+      </div>
       {/* Section 1 */}
       <div className="px-4 ">
         <MyCarousel />

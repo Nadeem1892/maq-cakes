@@ -56,7 +56,7 @@ const NavBar = () => {
   ];
 
   return (
-    <div className="bg-pink-50 fixed shadow-lg z-50 mt-[60px] mb-24 w-full flex p-2 items-center justify-between">
+    <div className="bg-pink-50 fixed shadow-lg z-10 mt-[60px] mb-24 w-full flex p-2 items-center justify-between">
       <nav className="flex justify-center w-full">
         <ul className="flex justify-around w-full space-x-6">
           {menuItems.map((item) => (
