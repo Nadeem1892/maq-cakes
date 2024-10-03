@@ -26,7 +26,7 @@ const PageRoutes = () => {
         
         {
           path:"cakes",
-          element:<div>Cakes</div>
+          element:<div className="mt-96">Cakes</div>
         },
      
       ],

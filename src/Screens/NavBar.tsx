@@ -1,71 +1,43 @@
 import React, { useState } from "react";
 import AtmDropdown from "../Atoms/AtmDropdown";
+import { useGetCategoryQuery } from "../Service/CategorySlice";
+import { useGetSubCategoryQuery } from "../Service/SubCategory";
 
 const NavBar = () => {
+  const { data: categoryData } = useGetCategoryQuery(0);
   const [visibleDropdown, setVisibleDropdown] = useState<string | null>(null);
-  
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
+
   let hideTimeout: NodeJS.Timeout | null = null;
 
-  const handleMouseEnter = (title: string) => {
+  // Fetch subcategories based on the selected category ID
+  const { data: subCategoryData } = useGetSubCategoryQuery(selectedCategoryId, { skip: !selectedCategoryId });
+
+  const handleMouseEnter = (categoryId: string, categoryName: string) => {
     if (hideTimeout) clearTimeout(hideTimeout); // Clear any hiding timeout
-    setVisibleDropdown(title);
+    setVisibleDropdown(categoryName);
+    setSelectedCategoryId(categoryId); // Set the selected category ID
   };
 
   const handleMouseLeave = () => {
     // Delay the hiding slightly to avoid flicker
-    hideTimeout = setTimeout(() => setVisibleDropdown(null), 200);
+    hideTimeout = setTimeout(() => {
+      setVisibleDropdown(null);
+      setSelectedCategoryId(null); // Reset the selected category ID when mouse leaves
+    }, 200);
   };
-
-  const menuItems = [
-    {
-      title: "Cakes",
-      subcategories: ["Chocolate Cake", "Vanilla Cake", "Red Velvet Cake"],
-    },
-    {
-      title: "Snacks",
-      subcategories: ["Chips", "Nachos", "Pretzels"],
-    },
-    {
-      title: "Breads",
-      subcategories: ["Whole Wheat", "Multigrain", "Sourdough"],
-    },
-    {
-      title: "Cookies",
-      subcategories: ["Chocolate Chip", "Oatmeal", "Sugar Cookies"],
-    },
-    {
-      title: "Desserts",
-      subcategories: ["Brownies", "Ice Cream", "Pudding"],
-    },
-    {
-      title: "Pastries",
-      subcategories: ["Croissants", "Danish", "Strudels"],
-    },
-    {
-      title: "Muffins",
-      subcategories: ["Blueberry", "Chocolate", "Banana Nut"],
-    },
-    {
-      title: "Pies",
-      subcategories: ["Apple Pie", "Pumpkin Pie", "Cherry Pie"],
-    },
-    {
-      title: "Rolls",
-      subcategories: ["Cinnamon Roll", "Dinner Roll", "Garlic Roll"],
-    },
-  ];
 
   return (
     <div className="bg-pink-50 fixed shadow-lg z-10 mt-[60px] mb-24 w-full flex p-2 items-center justify-between">
       <nav className="flex justify-center w-full">
         <ul className="flex justify-around w-full space-x-6">
-          {menuItems.map((item) => (
+          {categoryData?.data?.map((category: any) => (
             <AtmDropdown
-              key={item.title}
-              title={item.title}
-              isDropdownVisible={visibleDropdown === item.title}
-              subcategories={item.subcategories}
-              handleMouseEnter={() => handleMouseEnter(item.title)}
+              key={category._id}
+              title={category.categoryName}
+              isDropdownVisible={visibleDropdown === category.categoryName}
+              subcategories={visibleDropdown === category.categoryName ? subCategoryData?.data || [] : []} // Ensure subcategories is an array
+              handleMouseEnter={() => handleMouseEnter(category._id, category.categoryName)}
               handleMouseLeave={handleMouseLeave}
             />
           ))}
