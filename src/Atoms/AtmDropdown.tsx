@@ -14,6 +14,7 @@ type Props = {
   subcategories?: Subcategory[]; // Update the type to reflect the correct structure
   handleMouseEnter: () => void;
   handleMouseLeave: () => void;
+  id:string
 };
 
 function AtmDropdown({
@@ -22,6 +23,7 @@ function AtmDropdown({
   subcategories = [], // Default to an empty array
   handleMouseEnter,
   handleMouseLeave,
+  id
 }: Props) {
   return (
     <li
@@ -59,7 +61,7 @@ function AtmDropdown({
             {/* Add the "View All" button */}
             <li>
               <Link
-                to={`/${title.toLowerCase()}`}
+                to={`/${title.toLowerCase()}/${id}`}
                 className="block px-4 py-2 font-bold text-center text-pink-500 hover:bg-gray-100"
               >
                 View All

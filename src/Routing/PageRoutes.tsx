@@ -26,7 +26,7 @@ const PageRoutes = () => {
         },
         
         {
-          path:"cakes",
+          path:"cakes/:id",
           element:<ListingWrapper/>
         },
      

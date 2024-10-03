@@ -2,13 +2,23 @@ import React, { useState } from "react";
 import AtmDropdown from "../Atoms/AtmDropdown";
 import { useGetCategoryQuery } from "../Service/CategorySlice";
 import { useGetSubCategoryQuery } from "../Service/SubCategory";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store";
+import { setSelectedCategoryId } from "../Service/Slices/categorySlice";
+
+
 
 const NavBar = () => {
   const { data: categoryData } = useGetCategoryQuery(0);
+  const dispatch = useDispatch();
   const [visibleDropdown, setVisibleDropdown] = useState<string | null>(null);
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
+  // const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
+
 
   let hideTimeout: NodeJS.Timeout | null = null;
+
+   // Use selectedCategoryId from Redux store
+const selectedCategoryId = useSelector((state:RootState) => state.category.selectedCategoryId)
 
   // Fetch subcategories based on the selected category ID
   const { data: subCategoryData } = useGetSubCategoryQuery(selectedCategoryId, { skip: !selectedCategoryId });
@@ -16,7 +26,7 @@ const NavBar = () => {
   const handleMouseEnter = (categoryId: string, categoryName: string) => {
     if (hideTimeout) clearTimeout(hideTimeout); // Clear any hiding timeout
     setVisibleDropdown(categoryName);
-    setSelectedCategoryId(categoryId); // Set the selected category ID
+    dispatch(setSelectedCategoryId(categoryId));; // Set the selected category ID
   };
 
   const handleMouseLeave = () => {
@@ -34,6 +44,7 @@ const NavBar = () => {
           {categoryData?.data?.map((category: any) => (
             <AtmDropdown
               key={category._id}
+              id={category._id}
               title={category.categoryName}
               isDropdownVisible={visibleDropdown === category.categoryName}
               subcategories={visibleDropdown === category.categoryName ? subCategoryData?.data || [] : []} // Ensure subcategories is an array
