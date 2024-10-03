@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "../Screens/Layout";
 import Landing from "../Screens/Landing";
 import LoginModalwrapper from "../Screens/Auth/LoginModalwrapper";
+import ListingWrapper from "../Screens/Products/Cakes/ListingWrapper";
 
 
 // type Props = {}
@@ -26,7 +27,7 @@ const PageRoutes = () => {
         
         {
           path:"cakes",
-          element:<div className="mt-96">Cakes</div>
+          element:<ListingWrapper/>
         },
      
       ],
