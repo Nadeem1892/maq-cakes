@@ -25,6 +25,7 @@ function AtmDropdown({
   handleMouseLeave,
   id
 }: Props) {
+
   return (
     <li
       onMouseEnter={handleMouseEnter}
@@ -51,7 +52,7 @@ function AtmDropdown({
             {subcategories.map((subcategory) => (
               <li key={subcategory._id}>
                 <Link
-                  to={`/${title.toLowerCase()}/${subcategory.subCategoryName.toLowerCase()}`}
+                  to={`/${title.toLowerCase()}/${subcategory.subCategoryName.toLowerCase().replace(/\s+/g, '-')}`}
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   {subcategory.subCategoryName}

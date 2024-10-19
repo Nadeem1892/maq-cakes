@@ -27,10 +27,25 @@ const PageRoutes = () => {
         
         {
           path:"cakes/:id",
-          element:<ListingWrapper/>
+          element:<ListingWrapper/>,
         },
+       
+          {
+            path: "cakes/chocolate",
+            element: <div>Chocolate Cake</div>,
+          },
+          // Add more subcategories as needed
+          {
+            path: "cakes/vanilla",
+            element: <div>Vanilla Cake</div>,
+          },
+          {
+            path: "cakes/red-velvet-cake",
+            element: <div>Red Velvet Cake</div>,
+          },
+        ],
      
-      ],
+     
     },
    
   ]);
