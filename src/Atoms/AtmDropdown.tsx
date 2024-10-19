@@ -32,7 +32,7 @@ function AtmDropdown({
       className="relative"
     >
       <Link
-        to={`/${title.toLowerCase()}`}
+        to={`#`}
         className={`text-gray-800 hover:text-pink-300 ${
           isDropdownVisible ? "text-pink-400" : ""
         }`}
