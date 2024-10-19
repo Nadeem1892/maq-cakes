@@ -2,13 +2,15 @@ import { api } from "./ApiSlice"
 
 const productsCategorySlice = api.injectEndpoints({
     endpoints: (bulder) => ({
-        getProductByCategory: bulder.query({
+        getProductByCategoryOrSubCategory: bulder.query({
         query:(id) => ({
-            url: `product/get-products-category/${id}`,
+            url: `product/get-products-categoty-or-subcategory/${id}`,
             method:"GET",
-        }) 
-        })
+        }),
+        providesTags: ["product"],
+        }),
+        
     })
 })
 
-export const { useGetProductByCategoryQuery } = productsCategorySlice
+export const { useGetProductByCategoryOrSubCategoryQuery } = productsCategorySlice

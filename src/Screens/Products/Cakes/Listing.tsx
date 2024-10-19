@@ -17,7 +17,7 @@ type Props = {
 };
 
 export default function Listing({ products }: Props) {
-    const productList = products.data || []; // Safely access products.data
+    const productList = products?.data || []; // Safely access products.data
 
     return (
         <div className="grid grid-cols-2 gap-5 lg:gap-10 lg:grid-cols-6">
@@ -29,7 +29,7 @@ export default function Listing({ products }: Props) {
                         price={product.price}
                         offerPrice={product.offerPrice}
                         discount={product.discount}
-                        image={"https://bkmedia.bakingo.com/choco-truffle-cake0005choc-a.jpg?tr=h-265,w-265?tr=w-266,dpr-1.5,q-70"}
+                        image={"https://bkmedia.bakingo.com/choco-truffle-cake0005choc-a.jpg?tr=h-265,w-265?tr=w-266,dpr-1.5,q-70"} // Use dynamic image if available
                     />
                 ))
             ) : (
