@@ -33,8 +33,11 @@ const Header = () => {
             className="text-3xl md:hidden focus:outline-none"
             onClick={toggleNav}
           />
+          <Link to={"/"} className="flex items-center">
           <img className="w-20 h-20" src={maqLogo} alt="" />
           <h1 className="hidden text-xl uppercase lg:block lg:text-2xl">MAQ Cakes</h1>
+          </Link>
+          
         </div>
 
         {/* Search Bar, Cart, and User Icons */}
