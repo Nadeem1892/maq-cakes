@@ -8,6 +8,8 @@ import TrendingCakes from "../Components/TrendingCakes";
 import DesignerCakes from "../Components/DesignerCakes";
 import LookingforSomething from "../Components/LookingforSomething";
 import { Outlet } from "react-router-dom";
+import AtmStutasCard from "../Atoms/AtmStutasCard";
+import CategoryCrousel from "../Components/CategoryCrousel";
 
 
 
@@ -19,6 +21,10 @@ const Landing = () => {
       {/* this Outlate Landing Chiled */}
       <div>
         <Outlet/>
+      </div>
+
+      <div className="px-4">
+    <CategoryCrousel/>
       </div>
       {/* Section 1 */}
       <div className="px-4 ">
